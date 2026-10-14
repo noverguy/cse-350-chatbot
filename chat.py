@@ -52,8 +52,8 @@ bot_name = "Healthscope"
 #     else:
 #         print(f"{bot_name}: I do not understand...")
 
-
-def process_user_message(message):
+# refactored the chatbot functionality into a function so it could be called from the /chat route on flask
+def process_user_message(message): 
     sentence = tokenize(message)
     X = bag_of_words(sentence, all_words)
     X = X.reshape(1, X.shape[0])
