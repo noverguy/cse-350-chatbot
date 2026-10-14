@@ -1,0 +1,14 @@
+h3 {
+    margin: 0px;
+}
+#conversationcontainer {
+    display: flex;
+    flex-direction: column;
+}
+#usermessage {
+    color:rgb(95, 116, 160);
+}
+#botmessage {
+    color: rgba(255, 0, 0, 0.589);
+}
+
