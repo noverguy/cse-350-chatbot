@@ -1,14 +1,70 @@
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #120e2b;
+    color: white;
+}
 h3 {
+    display: flex;
+    justify-content: center;
     margin: 0px;
 }
-#conversationcontainer {
+#leftpanel, #rightpanel, #conversationcontainer {
     display: flex;
     flex-direction: column;
+    position: relative;
+    border-style: outset;
+    border-width: thin;
+    border-color: #725bc2;
+    box-shadow: 0px 0px 20px black;
+}
+#leftpanel {
+    width: 20%;
+    align-items: center;
+}
+#conversationcontainer {
+    width: 55%
+}
+#conversation {
+    margin: 10px;
+    min-height: 50px;
+}
+#userinterface {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 5px;
+    width: 100%
+}
+#userinput {
+    border-radius: 20px;
+    border-color: #725bc2;
+    background-color: #967df2;
+    align-self: flex-start;
+    width: 95%;
+}
+::placeholder {
+   text-align: center; 
+}
+#submitbutton {
+    width: 5%;
+}
+#rightpanel {
+    width: 20%;
+    align-items: center;
 }
 #usermessage {
-    color:rgb(95, 116, 160);
+    color:rgb(83, 239, 255);
+    height: 30px;
+    text-align: right;
+    position: relative;
+    right: 20px;
 }
 #botmessage {
     color: rgba(255, 0, 0, 0.589);
+    height: 30px;
+    position: relative;
+    left: 20px;
 }
 

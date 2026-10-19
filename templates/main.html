@@ -3,9 +3,11 @@
     <head>
         <title>Healthscope Diagnostic Assistant</title>
         <link rel= "stylesheet" type= "text/css" href= "../static/styles.css">
-        <h1>HEALTHSCOPE</h1>
     </head>
     <body>
+        <div id="leftpanel">
+            <h1>HEALTHSCOPE</h1>
+        </div>
         <div id="conversationcontainer">
             <h3>Conversation:</h3>
             <div id="conversation">
@@ -16,7 +18,9 @@
                 <button id="submitbutton" onclick="converse()">Send</button>
             </div>
         </div>
-        
+        <div id="rightpanel">
+            <p>DISCLAIMER:</p>
+        </div>
     </body>
 </html>
 <script>
@@ -40,7 +44,7 @@
         fetch('/chat', {    // calls /chat app route from app.py
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({input: input.content}) // passes in cached conversation history
+            body: JSON.stringify({input: input.content})
         })
         .then((response) => response.json()) // gets response returned by chat function in app.py
         .then((data) => {
