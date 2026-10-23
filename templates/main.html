@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Healthscope Diagnostic Assistant</title>
+        <link rel= "stylesheet" type= "text/css" href= "../static/styles.css">
+    </head>
+    <body>
+        <div id="leftpanel">
+            <h1>HEALTHSCOPE</h1>
+        </div>
+        <div id="conversationcontainer">
+            <h3>Conversation:</h3>
+            <div id="conversation">
+
+            </div>
+            <div id="userinterface">
+                <input type="text" id="userinput" placeholder="Describe Your Symptoms">
+                <button id="submitbutton" onclick="converse()">Send</button>
+            </div>
+        </div>
+        <div id="rightpanel">
+            <p>DISCLAIMER:</p>
+        </div>
+    </body>
+</html>
+<script>
+    //let history = []; // array storing conversation history for this session
+    const inputbox = document.getElementById("userinput")
+
+    inputbox.addEventListener("keypress", function(event) {
+        if (event.key == "Enter") {
+            document.getElementById("submitbutton").click();
+        }
+    })
+
+    function converse() {
+        const input = {
+            role: "user",
+            content: inputbox.value
+        };
+
+        appendMessage(input);
+
+        fetch('/chat', {    // calls /chat app route from app.py
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({input: input.content})
+        })
+        .then((response) => response.json()) // gets response returned by chat function in app.py
+        .then((data) => {
+            const botresponse = {role: "system", content: data.response};
+            appendMessage(botresponse);
+            document.getElementById("userinput").value = "";
+        });
+    }
+
+    function appendMessage(message) {
+        const messagebox = document.getElementById("conversation");
+        const newmessage = document.createElement('pre');
+
+        //history.push(message);
+
+        newmessage.textContent = message.content;
+
+        if (message.role == "user") {
+            newmessage.id = "usermessage"
+        }
+        else {
+            newmessage.id = "botmessage"
+        }
+
+        messagebox.appendChild(newmessage);
+
+        messagebox.scrollTop = messagebox.scrollHeight;
+    }
+</script>
