@@ -1,16 +1,21 @@
+html {
+    height: 100%;
+}
 body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: #120e2b;
     color: white;
+    min-height: 100%;
+    margin: 0px;
 }
 h3 {
     display: flex;
     justify-content: center;
-    margin: 0px;
+    margin: 10px;
 }
-#leftpanel, #rightpanel, #conversationcontainer {
+#leftpanel, #rightpanel {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -18,23 +23,34 @@ h3 {
     border-width: thin;
     border-color: #725bc2;
     box-shadow: 0px 0px 20px black;
+    min-height: 100%;
+    margin: 10px;
 }
 #leftpanel {
     width: 20%;
     align-items: center;
 }
 #conversationcontainer {
-    width: 55%
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 55%;
+    min-height: 100%;
 }
 #conversation {
     margin: 10px;
     min-height: 50px;
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 #userinterface {
     display: flex;
     justify-content: center;
-    position: relative;
-    bottom: 5px;
+    position: absolute;
+    bottom: 10px;
     width: 100%
 }
 #userinput {
@@ -43,28 +59,45 @@ h3 {
     background-color: #967df2;
     align-self: flex-start;
     width: 95%;
+    padding-left: 10px;
 }
 ::placeholder {
    text-align: center; 
 }
 #submitbutton {
     width: 5%;
+    background-color: #7f52ff;
+    border-radius: 20px;
+    border-color: #725bc2;
+    border-style: solid;
 }
 #rightpanel {
     width: 20%;
     align-items: center;
 }
-#usermessage {
-    color:rgb(83, 239, 255);
-    height: 30px;
-    text-align: right;
+#usermessage, #botmessage {
+    background-color: #7054884d;
+    border-radius: 10px;
+    padding: 5px;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    min-height: 20px;
+    height: auto;
     position: relative;
-    right: 20px;
+    min-width: 20%;
+    max-width: 50%;
+    bottom: 15px;
+}
+#usermessage {
+    text-align: left;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 #botmessage {
-    color: rgba(255, 0, 0, 0.589);
-    height: 30px;
-    position: relative;
-    left: 20px;
+    margin-right: auto;
+    text-align: right;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
