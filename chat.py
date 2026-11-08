@@ -59,16 +59,25 @@ def process_user_message(message):
     X = X.reshape(1, X.shape[0])
     X = torch.from_numpy(X).to(device)
 
+    # chat logic redone using Gemini to incorporate multiple symptoms.
     output = model(X)
-    _, predicted = torch.max(output, dim=1)
+    probs = torch.sigmoid(output).squeeze() # Use Sigmoid for multi-label
 
-    tag = tags[predicted.item()]
+    threshold = 0.75 # Adjust this to make the bot more or less sensitive
+    detected_intents = []
 
-    probs = torch.softmax(output, dim=1)
-    prob = probs[0][predicted.item()]
-    if prob.item() > 0.75:
-        for intent in intents['intents']:
-            if tag == intent["tag"]:
-                return f"{random.choice(intent['responses'])}"
+    for i, prob in enumerate(probs):
+        if prob.item() > threshold:
+            detected_intents.append(tags[i])
+
+    if detected_intents:
+        responses = []
+        for intent_tag in detected_intents:
+            for intent in intents['intents']:
+                if intent['tag'] == intent_tag:
+                    responses.append(random.choice(intent['responses']))
+                    
+        # Combine the responses for the user
+        return(f"\n\n".join(responses))
     else:
-        return f"I do not understand..."
+        return(f"Unable to understand. Please try describing your symptoms differently.")
