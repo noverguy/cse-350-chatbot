@@ -15,7 +15,7 @@
 
             </div>
             <div id="userinterface">
-                <input type="text" id="userinput" placeholder="Describe Your Symptoms">
+                <input type="text" pattern="[A-Za-z .]{1,50}" id="userinput" placeholder="Describe Your Symptoms" required>
                 <button id="submitbutton" onclick="converse()">Send</button>
             </div>
         </div>
@@ -50,6 +50,21 @@
         };
 
         appendMessage(input);
+
+        try {
+            validateInput(input);
+        }
+        catch (error) {
+            const errormessage = {
+                role: "bot",
+                content: "Invalid Input. Must be alphabetic characters or spaces only, and between 1-50 characters."
+            };
+
+            appendMessage(errormessage);
+            document.getElementById("userinput").value = "";
+            return
+        }
+        
 
         fetch('/chat', {    // calls /chat app route from app.py
             method: 'POST',
@@ -87,5 +102,14 @@
     function clearconversation() {
         const convo = document.getElementById("conversation");
         convo.innerHTML = "";
+    }
+
+    function validateInput(input) {
+        if (inputbox.checkValidity()) {
+            return
+        }
+        else {
+            throw new Error("Invalid User Input")
+        }
     }
 </script>
