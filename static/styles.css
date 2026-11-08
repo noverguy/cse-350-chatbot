@@ -76,7 +76,7 @@ button:active {
     width: 95%;
     padding-left: 10px;
 }
-::placeholder {
+#userinput::placeholder {
    text-align: center; 
    color: black;
 }
@@ -85,7 +85,7 @@ button:active {
     background-color: #7f52ff;
     border-radius: 20px;
     border-color: #725bc2;
-    border-style: solid;
+    border-style: outset;
 }
 #rightpanel {
     width: 20%;
@@ -104,8 +104,10 @@ button:active {
     height: auto;
     position: relative;
     min-width: 20%;
-    max-width: 50%;
+    max-width: 70%;
     bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 #usermessage {
     text-align: left;
