@@ -15,6 +15,9 @@ h3 {
     justify-content: center;
     margin: 10px;
 }
+button:active {
+    transform: translateY(1px);
+}
 #leftpanel, #rightpanel {
     display: flex;
     flex-direction: column;
@@ -30,6 +33,13 @@ h3 {
     width: 20%;
     align-items: center;
 }
+#clearconvo {
+    width: 80%;
+    background-color: #7f52ff;
+    border-radius: 20px;
+    border-color: #725bc2;
+    border-style: outset;
+}
 #conversationcontainer {
     display: flex;
     flex-direction: column;
@@ -40,11 +50,16 @@ h3 {
 #conversation {
     margin: 10px;
     min-height: 50px;
+    max-height: 900px;
+    overflow-y: auto;
     position: absolute;
     bottom: 10px;
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+::-webkit-scrollbar {
+    scrollbar-width: thin;
 }
 #userinterface {
     display: flex;
@@ -63,6 +78,7 @@ h3 {
 }
 ::placeholder {
    text-align: center; 
+   color: black;
 }
 #submitbutton {
     width: 5%;
@@ -74,6 +90,9 @@ h3 {
 #rightpanel {
     width: 20%;
     align-items: center;
+}
+#medicaldisclaimer, #privacydisclaimer {
+    margin: 20px;
 }
 #usermessage, #botmessage {
     background-color: #7054884d;

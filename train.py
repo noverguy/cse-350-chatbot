@@ -42,16 +42,30 @@ print(len(all_words), "unique stemmed words:", all_words)
 # create training data
 X_train = []
 y_train = []
+
+# new training loop provided by Gemini to allow for caculating probability of individual symptoms.
+# 1. Group all tags that belong to the exact same sentence pattern
+from collections import defaultdict
+pattern_to_tags = defaultdict(list)
+
 for (pattern_sentence, tag) in xy:
-    # X: bag of words for each pattern_sentence
-    bag = bag_of_words(pattern_sentence, all_words)
+    # Convert tokenized array to a tuple so it can be used as a dictionary key
+    pattern_tuple = tuple(pattern_sentence)
+    pattern_to_tags[pattern_tuple].append(tag)
+
+# 2. Build the multi-hot label array for each unique pattern
+for pattern_tuple, tag_list in pattern_to_tags.items():
+    bag = bag_of_words(list(pattern_tuple), all_words)
     X_train.append(bag)
-    # y: PyTorch CrossEntropyLoss needs only class labels, not one-hot
-    label = tags.index(tag)
+    
+    # Create an array of 0s, and set 1.0 for EVERY tag associated with this sentence
+    label = [0.0] * len(tags)
+    for t in tag_list:
+        label[tags.index(t)] = 1.0
     y_train.append(label)
 
 X_train = np.array(X_train)
-y_train = np.array(y_train)
+y_train = np.array(y_train, dtype=np.float32)
 
 # Hyper-parameters 
 num_epochs = 1000
@@ -88,14 +102,15 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
 
 # Loss and optimizer
-criterion = nn.CrossEntropyLoss()
+criterion = nn.BCEWithLogitsLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
 # Train the model
 for epoch in range(num_epochs):
     for (words, labels) in train_loader:
         words = words.to(device)
-        labels = labels.to(dtype=torch.long).to(device)
+        # Changed to float32 type for labels with suggestion from Gemini
+        labels = labels.to(dtype=torch.float32).to(device)
         
         # Forward pass
         outputs = model(words)
