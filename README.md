@@ -1,7 +1,7 @@
-# Development Branch
+# Test Branch
 
-This branch is intented to host the latest development version, with the latest versions of all in development features.
+This branch is for testing chatbot functionality.
 
 ## Work-To-Do:
- - Add severity accumulation logic
- - Add escalation logic for if cumulative severity score is above threshold
+ - Report any errors into Jira
+
