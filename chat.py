@@ -21,6 +21,8 @@ all_words = data['all_words']
 tags = data['tags']
 model_state = data["model_state"]
 
+severityRating = 0
+
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
@@ -74,8 +76,14 @@ def process_user_message(message):
         responses = []
         for intent_tag in detected_intents:
             for intent in intents['intents']:
+                severityRating = severityRating + intent.get('severity')
                 if intent['tag'] == intent_tag:
-                    responses.append(random.choice(intent['responses']))
+                    if severityRating < 15:
+                        responses.append(random.choice(intent['responses']))
+                    elif severityRating < 25:
+                        responses.append(random.choice(intent['moderate severity']))
+                    else:
+                        responses.append(random.choice(intent['high severity']))
                     
         # Combine the responses for the user
         return(f"\n\n".join(responses))

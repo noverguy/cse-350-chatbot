@@ -13,6 +13,12 @@
             "responses": [
                 "You reported itching. This symptom can be associated with allergic reactions, eczema, contact dermatitis, dry skin, or insect bites. For mild cases, you might try applying an over-the-counter hydrocortisone cream, using fragrance-free moisturizers, or applying a cool, damp compress to the area. If the itching is severe, spreads rapidly, or does not improve, please consult a healthcare professional."
             ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
+            ],
             "severity": 1
         },
         {
@@ -28,6 +34,12 @@
             "responses": [
                 "You reported a skin rash. Rashes can be associated with conditions like contact dermatitis, fungal infections, eczema, or mild allergic reactions. As a potential home remedy, you can try applying calamine lotion or taking an over-the-counter antihistamine to reduce irritation. Keep the area clean and dry. If the rash is accompanied by a fever, spreads quickly, or becomes painful, seek medical advice."
             ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
+            ],
             "severity": 3
         },
         {
@@ -40,6 +52,12 @@
             ],
             "responses": [
                 "You reported continuous sneezing. This is frequently associated with allergic rhinitis (hay fever), the common cold, or a viral respiratory infection. Please monitor your symptoms closely. If you develop a high fever, sinus pain, or difficulty breathing, you should consult a healthcare provider."
+            ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
             ],
             "severity": 4
         },
@@ -54,6 +72,12 @@
             ],
             "responses": [
                 "You reported shivering. Shivering is often the body's response to cold environments, but it can also be associated with developing a fever, a systemic viral or bacterial infection, or hypothermia. Please monitor your body temperature. If you develop a high fever or if the shivering is severe and persistent, seek medical attention immediately."
+            ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
             ],
             "severity": 5
         },
@@ -70,6 +94,12 @@
             "responses": [
                 "You reported chills. Chills can indicate the early stages of a viral infection, a mild cold, or a mild fever. Make sure to rest, stay warm, and drink plenty of warm fluids. You may also consider over-the-counter fever reducers like acetaminophen or ibuprofen if a mild fever develops. If symptoms worsen, consult a doctor."
             ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
+            ],
             "severity": 3
         },
         {
@@ -83,6 +113,12 @@
             ],
             "responses": [
                 "You reported joint pain. This can be associated with osteoarthritis, minor sprains, strains, or systemic viral infections. For relief, try resting the affected joint, applying ice or heat packs, and taking over-the-counter nonsteroidal anti-inflammatory drugs (NSAIDs) like ibuprofen. If the joint is hot to the touch, severely swollen, or if the pain is the result of an acute injury, see a doctor."
+            ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
             ],
             "severity": 3
         },
@@ -99,6 +135,12 @@
             "responses": [
                 "You reported stomach pain. Severe or persistent stomach pain can be associated with food poisoning, appendicitis, gallstones, ulcers, or gastroenteritis. Because abdominal pain can sometimes indicate a serious underlying issue, please monitor for additional symptoms like vomiting, fever, or localized tenderness, and seek medical care if the pain is severe or prolonged."
             ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
+            ],
             "severity": 5
         },
         {
@@ -113,6 +155,12 @@
             ],
             "responses": [
                 "You reported vomiting. This can be associated with gastroenteritis (stomach flu), food poisoning, migraines, or cyclic vomiting syndrome. Repeated vomiting can rapidly lead to dehydration and physical exhaustion. Try taking small sips of clear fluids or oral rehydration solutions. If you cannot keep fluids down for more than 24 hours, or if you notice blood in your vomit, seek emergency medical care."
+            ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
             ],
             "severity": 5
         },
@@ -130,6 +178,12 @@
             "responses": [
                 "You reported fatigue. Fatigue is a complex symptom that can be associated with anemia, thyroid disorders, sleep apnea, depression, or Chronic Fatigue Syndrome (CFS). Ensure you are getting adequate sleep, eating a balanced diet, and managing stress. If the exhaustion is overwhelming, persistent, and not improved by rest, you should consult a doctor for a thorough evaluation."
             ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
+            ],
             "severity": 4
         },
         {
@@ -142,6 +196,12 @@
             ],
             "responses": [
                 "You reported burning urination. This is highly associated with urinary tract infections (UTIs), kidney stones, or sexually transmitted infections. This requires professional medical evaluation. Please drink plenty of water to help flush your system, and schedule an appointment with a healthcare professional for proper diagnosis and antibiotics if necessary."
+            ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
             ],
             "severity": 6
         },
@@ -158,6 +218,12 @@
             "responses": [
                 "You reported a headache. Headaches are commonly associated with muscle tension, dehydration, sinus congestion, or migraines. Try resting in a quiet, dark room, drinking a large glass of water, and taking an over-the-counter pain reliever like acetaminophen or ibuprofen. If the headache is sudden, severe, or accompanied by vision changes or a stiff neck, seek immediate medical attention."
             ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
+            ],
             "severity": 3
         },
         {
@@ -173,6 +239,12 @@
             "responses": [
                 "You reported a sore throat. This can be associated with viral pharyngitis, strep throat, allergies, or dry air. To soothe your throat, try gargling with warm salt water, drinking warm teas with honey, and using over-the-counter throat lozenges. If you have a high fever, swollen tonsils with white patches, or difficulty breathing, please consult a doctor."
             ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
+            ],
             "severity": 3
         },
         {
@@ -186,6 +258,12 @@
             ],
             "responses": [
                 "You reported dizziness. Dizziness or lightheadedness can be associated with vertigo, dehydration, low blood pressure, or inner ear infections. Please sit or lie down immediately to prevent a fall. Ensure you are well-hydrated. If the dizziness is severe, recurrent, or accompanied by chest pain or fainting, seek emergency medical care."
+            ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
             ],
             "severity": 4
         },
@@ -202,6 +280,12 @@
             ],
             "responses": [
                 "You reported muscle pain. This is commonly associated with physical overexertion, tension, the flu, or other viral infections. For relief, try gentle stretching, applying a warm compress or taking a warm bath, and using over-the-counter pain relievers like ibuprofen or acetaminophen. Rest the affected muscles. If the pain is severe or accompanied by a high fever, consult a healthcare provider."
+            ],
+            "Moderate Severity": [
+                "You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen."
+            ],
+            "High Severity": [
+                "You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment."
             ],
             "severity": 2
         }
