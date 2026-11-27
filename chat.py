@@ -71,12 +71,19 @@ def process_user_message(message):
             detected_intents.append(tags[i])
 
     if detected_intents:
+        severityRating = 0
         responses = []
         for intent_tag in detected_intents:
             for intent in intents['intents']:
                 if intent['tag'] == intent_tag:
-                    responses.append(random.choice(intent['responses']))
-                    
+                    severityRating = severityRating + intent.get('severity')
+                    if severityRating > 15:
+                        return(f"You reported symptoms that indicate a high severity level. It is strongly recommended that you seek medical attention immediately to ensure proper care and treatment.")
+                    elif severityRating > 10:
+                        return(f"You reported symptoms that indicate a moderate severity level. Please monitor your symptoms closely and consider seeking medical advice if they persist or worsen.")
+                    else:
+                        responses.append(random.choice(intent['responses']))
+
         # Combine the responses for the user
         return(f"\n\n".join(responses))
     else:
